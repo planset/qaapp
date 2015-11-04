@@ -1,0 +1,8 @@
+env
+node_modules
+
+*.pyc
+
+client/www/js/config.js
+server/config.py
+

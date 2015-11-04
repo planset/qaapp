@@ -1,0 +1,4 @@
+MYSQL_USER = '[replace your mysql user name]'
+MYSQL_PASSWORD = '[replace your mysql user password]' 
+MYSQL_DB = '[replace your mysql db name]'
+MYSQL_HOST = '[replace your mysql host]'
