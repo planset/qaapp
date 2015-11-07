@@ -45,8 +45,8 @@
         .then(function(res){
             $scope.item.q = $scope.editQ;
             $scope.item.a = $scope.editA;
-            $scope.item.marked_q = $sce.trustAsHtml(markdown.toHTML($scope.item.q));
-            $scope.item.marked_a = $sce.trustAsHtml(markdown.toHTML($scope.item.a));
+            $scope.item.marked_q = $sce.trustAsHtml(marked($scope.item.q));
+            $scope.item.marked_a = $sce.trustAsHtml(marked($scope.item.a));
             $scope.message = $sce.trustAsHtml('saved!');
             $scope.toggleEdit();
         }, function(res){
@@ -98,8 +98,8 @@
             .then(function(res){
                 _this.items = res.data.data;
                 _this.items.forEach(function(item){
-                    item.marked_q = $sce.trustAsHtml(markdown.toHTML(item.q));
-                    item.marked_a = $sce.trustAsHtml(markdown.toHTML(item.a));
+                    item.marked_q = $sce.trustAsHtml(marked(item.q));
+                    item.marked_a = $sce.trustAsHtml(marked(item.a));
                 });
             }, function(res){
                 alert('ERROR: load cards');
