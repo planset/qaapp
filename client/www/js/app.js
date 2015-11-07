@@ -22,7 +22,7 @@
     $scope.isEdit = false;
     $scope.editQ = '';
     $scope.editA = '';
-    $scope.message = '';
+    $scope.message = $sce.trustAsHtml('');
 
     $scope.toggleEdit = function(){
         $scope.isEdit = !$scope.isEdit;
@@ -33,7 +33,7 @@
     }
     $scope.cancel = function(){
         $scope.isEdit = false;
-        $scope.message = '';
+        $scope.message = $sce.trustAsHtml('');
     }
     $scope.update = function(id){
         var data = {
@@ -45,12 +45,12 @@
         .then(function(res){
             $scope.item.q = $scope.editQ;
             $scope.item.a = $scope.editA;
-            $scope.item.marked_q = $sce.trustAsHtml(markdown.toHTML($scope.item.q));;
-            $scope.item.marked_a = $sce.trustAsHtml(markdown.toHTML($scope.item.a));;
-            $scope.message = 'saved!';
+            $scope.item.marked_q = $sce.trustAsHtml(markdown.toHTML($scope.item.q));
+            $scope.item.marked_a = $sce.trustAsHtml(markdown.toHTML($scope.item.a));
+            $scope.message = $sce.trustAsHtml('saved!');
             $scope.toggleEdit();
         }, function(res){
-            $scope.message = 'error!';
+            $scope.message = $sce.trustAsHtml(res.data);
         });
     }
     $scope.delete = function(id){
@@ -112,6 +112,7 @@
                     function($scope, $http, $sce, $data) {
     $scope.q = '';
     $scope.a = '';
+    $scope.message = $sce.trustAsHtml('');
 
     $scope.add = function(){
         var data = {
@@ -125,12 +126,12 @@
         };
         $http(req)
             .then(function(res){
-                //res are data, status, headers, config
-                $scope.message = 'result: ' + res.data.result + ', data = ' + res.data.data;
+                $scope.message = $sce.trustAsHtml("Added!");
+                $scope.q = '';
+                $scope.a = '';
             }, function(res){
-                $scope.message = 'error';
+                $scope.message = $sce.trustAsHtml(res.data);
             });
-
     };
 
     $scope.back = function() {

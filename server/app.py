@@ -60,9 +60,9 @@ def del_card(id):
     return jsonify(result='ok')
 
 def validate_param_card(p):
-    if not p.has_key('q'): raise BadRequest('Param q is required.')
-    if p.get('q') == '': raise BadRequest('Param q is not allow empty.')
-    if not p.has_key('a'): raise BadRequest('Param a is required.')
+    if not p.has_key('q'): raise BadRequest('Question is required.')
+    if p.get('q') == '': raise BadRequest('Question is not allow empty.')
+    if not p.has_key('a'): raise BadRequest('Answer is required.')
 
 @app.route('/cards/<int:id>', methods=['PUT'])
 def update_card(id):

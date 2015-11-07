@@ -1,0 +1,11 @@
+
+.item {
+    padding: 10px;
+    line-height: 1;
+}
+
+.edit-question, 
+.edit-answer {
+  width: 100%;
+}
+
