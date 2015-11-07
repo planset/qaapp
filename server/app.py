@@ -6,6 +6,7 @@ from flask import (Flask, request, jsonify)
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
+from flask.ext.cors import CORS
 from werkzeug.exceptions import BadRequest
 
 import config
@@ -18,6 +19,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
+CORS(app, resources={r'*': {'origins': config.CORS_ORIGINS }})
 
 
 class Card(db.Model):

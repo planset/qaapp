@@ -23,27 +23,16 @@ Install
 
   virtualenv --no-site-packages env
   pip install -r server/requires.txt
-
-  cd server
-  cp config.py.sample config.py
-
-  python app.py db upgrade
-
-  cd ../client/www/js
-  cp config.js.sample config.js
   ```
 
 2. Run API server
   ```bash
-  cd server
-  python app.py --port=9092 --reload
+  server/run.sh
   ```
 
-3. Run Client側を動かす
+3. Run client
   ```bash
-  cd client
-  python -m SimpleHTTPServer
-  # python3 -m http.server
+  client/run.sh
   ```
 
 4. ブラウザでアクセス
@@ -56,6 +45,7 @@ LIBRARIES
 * [Flask](http://flask.pocoo.org)
 * [Flask-Script](https://flask-script.readthedocs.org)
 * [Flask-Migrate](https://flask-migrate.readthedocs.org)
+* [Flask-CORS](https://flask-cors.readthedocs.org)
 
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [alembic](https://alembic.readthedocs.org)
