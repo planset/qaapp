@@ -5,6 +5,10 @@
 # Examples
 #SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
 #SQLALCHEMY_DATABASE_URI = 'mysql:///username:password@server/db'
-
 SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
 
+#
+# Origins for CORS(Cross-Origin Resource Sharing)
+# 
+#CORS_ORIGINS = 'http://localhost:8000'
+CORS_ORIGINS = '*'

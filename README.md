@@ -45,6 +45,7 @@ LIBRARIES
 * [Flask](http://flask.pocoo.org)
 * [Flask-Script](https://flask-script.readthedocs.org)
 * [Flask-Migrate](https://flask-migrate.readthedocs.org)
+* [Flask-CORS](https://flask-cors.readthedocs.org)
 
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [alembic](https://alembic.readthedocs.org)
