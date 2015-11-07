@@ -1,7 +1,3 @@
-'use strict';
-
 function Config(){
     this.URL_BASE = "http://localhost:9092";
 }
-
-module.exports = Config;
