@@ -6,3 +6,4 @@ node_modules
 client/www/js/config.js
 server/config.py
 
+db.sqlite

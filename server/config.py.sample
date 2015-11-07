@@ -1,4 +1,10 @@
-MYSQL_USER = '[replace your mysql user name]'
-MYSQL_PASSWORD = '[replace your mysql user password]' 
-MYSQL_DB = '[replace your mysql db name]'
-MYSQL_HOST = '[replace your mysql host]'
+#
+# Database config
+#
+
+# Examples
+#SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
+#SQLALCHEMY_DATABASE_URI = 'mysql:///username:password@server/db'
+
+SQLALCHEMY_DATABASE_URI = 'sqlite:///db.sqlite'
+
