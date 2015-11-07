@@ -86,6 +86,7 @@
     </ons-navigator>
 
     <ons-template id="detail.html">
+    
         <ons-page ng-controller="DetailController">
 
             <ons-toolbar>
@@ -93,34 +94,35 @@
                 <div class="center">Answer</div>
             </ons-toolbar>
 
+    <ons-gesture-detector ng-swiperight="navi.popPage();">
             <ons-list modifier="inset" style="margin-top: 10px">
                 <ons-list-item class="item">
                     <ons-row>
                         <ons-col ng-bind-html="item.marked_a">
                         </ons-col>
 
-            <div class="formarea" ng-show="isEdit">
+                        <div class="formarea" ng-show="isEdit">
 
-              <div class="form-row">
-                <label for=q>question:</label>
-                <textarea id=edit-q name=edit-q ng-model='editQ' rows=10 cols=80></textarea>
-              </div>
+                          <div class="form-row">
+                            <label for=q>question:</label>
+                            <textarea id=edit-q name=edit-q class="textarea" ng-model='editQ' rows=10 cols=80></textarea>
+                          </div>
 
-              <div class="form-row">
-                <label for=a>answer:</label>
-                <textarea id=edit-a name=edit-a ng-model='editA' rows=10 cols=80></textarea>
-              </div>
+                          <div class="form-row">
+                            <label for=a>answer:</label>
+                            <textarea id=edit-a name=edit-a class="textarea" ng-model='editA' rows=10 cols=80></textarea>
+                          </div>
 
-              <div class="vspc form-row">
-                <ons-button ng-click="update()">Update</ons-button>
-                <ons-button ng-click="cancel()">Cancel</ons-button>
-              </div>
+                          <div class="vspc form-row">
+                            <ons-button ng-click="update()">Update</ons-button>
+                            <ons-button ng-click="cancel()">Cancel</ons-button>
+                          </div>
 
-            </div>
+                        </div>
 
-              <div class="vspc form-row">
-                {{ message }}
-              </div>
+                        <div class="vspc form-row">
+                          {{ message }}
+                        </div>
 
                     </ons-row>
                 </ons-list-item>
@@ -132,6 +134,7 @@
               <ons-button ng-click="delete(item.id);">delete</ons-button>
               <ons-button ng-click="toggleEdit();">edit</ons-button>
             </ons-row>
+    </ons-gesture-detector>
 
         </ons-page>
     </ons-template>
@@ -148,12 +151,12 @@
 
               <div class="form-row">
                 <label for=q>question:</label>
-                <textarea id=q name=q ng-model='q' rows=10 cols=80></textarea>
+                <textarea id=q name=q class="textarea" ng-model='q' rows=10 cols=80></textarea>
               </div>
 
               <div class="form-row">
                 <label for=a>answer:</label>
-                <textarea id=a name=a ng-model='a' rows=10 cols=80></textarea>
+                <textarea id=a name=a class="textarea" ng-model='a' rows=10 cols=80></textarea>
               </div>
 
               <div class="vspc form-row">
